@@ -1,0 +1,70 @@
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #ccc;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 이벤트 스타일 */
+.event {
+    position: relative;
+    width: 50%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.event.left {
+    left: 0;
+    text-align: right;
+}
+
+.event.right {
+    left: 50%;
+    text-align: left;
+}
+
+.event .content {
+    position: relative;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 화살표 */
+.event.left .content::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent white;
+}
+
+.event.right .content::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent white transparent transparent;
+}
